@@ -91,14 +91,14 @@ struct CandyBar
 {
     char name[20];
     double weight;
-    int calrie;
+    int calorie;
 };
 
 int main()
 {
     CandyBar snack = {"Mocha Munch", 2.3, 350};
 
-    cout << "이름 : " << snack.name << "\n중량 : " << snack.weight << "\n칼로리 : " << snack.calrie << endl;
+    cout << "이름 : " << snack.name << "\n중량 : " << snack.weight << "\n칼로리 : " << snack.calorie << endl;
 
     return 0;
 }
@@ -110,7 +110,7 @@ struct CandyBar
 {
     char name[20];
     double weight;
-    int calrie;
+    int calorie;
 };
 
 int main()
@@ -121,9 +121,9 @@ int main()
     snacks[1] = {"Hello candy ", 4.9, 709};
     snacks[2] = {"snack bar", 3.4, 260};
 
-    cout << "1. 이름 : " <<  snacks[0].name << ", 중량 : " << snacks[0].weight << ", 칼로리 : " << snacks[0].calrie << endl;
-    cout << "2. 이름 : " <<  snacks[1].name << ", 중량 : " << snacks[1].weight << ", 칼로리 : " << snacks[1].calrie << endl;
-    cout << "3. 이름 : " <<  snacks[2].name << ", 중량 : " << snacks[2].weight << ", 칼로리 : " << snacks[2].calrie << endl;
+    cout << "1. 이름 : " <<  snacks[0].name << ", 중량 : " << snacks[0].weight << ", 칼로리 : " << snacks[0].calorie << endl;
+    cout << "2. 이름 : " <<  snacks[1].name << ", 중량 : " << snacks[1].weight << ", 칼로리 : " << snacks[1].calorie << endl;
+    cout << "3. 이름 : " <<  snacks[2].name << ", 중량 : " << snacks[2].weight << ", 칼로리 : " << snacks[2].calorie << endl;
 
     return 0;
 }
