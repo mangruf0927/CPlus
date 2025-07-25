@@ -1,6 +1,9 @@
 #include <iostream>
-#include "IntStack.h"
-#include "DoubleStack.h"
+// Q1 헤더
+// #include "IntStack.h"
+
+// Q2 헤더
+// #include "DoubleStack.h"
 
 using namespace std;
 
