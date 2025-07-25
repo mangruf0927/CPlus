@@ -253,3 +253,102 @@ int main()
     return 0;
 }
 */
+
+/*
+// Q6
+void *seqsearch(const void *key, const void * base, size_t nmemb, size_t size, int(*compar)(const void*, const void *));
+
+// Q7
+void *binsearch(const void *key, const void * base, size_t nmemb, size_t size, int(*compar)(const void*, const void *));
+
+// Q8
+void *bsearch(const void *key, const void * base, size_t nmemb, size_t size, int(*compar)(const void*, const void *));
+
+int compare(const void * a, const void * b)
+{
+    const int * x = static_cast<const int *>(a);
+    const int * y = static_cast<const int *>(b);
+
+    if(* x < * y) return -1;
+    else if(* x > * y) return 1;
+    else return 0;
+}
+
+int main()
+{   
+    int arr[] = {1, 3, 5, 7, 9};
+    int key = 5;
+
+    cout << "Q6 선형 탐색\n";
+    int * seq = static_cast<int *>(seqsearch(&key, arr, 5, sizeof(int), compare));
+    if(seq == nullptr) cout << "검색에 실패했습니다.\n";
+    else cout << key << "는 arr[" << (seq - arr) << "]에 있습니다.\n";
+
+    cout << "\nQ7 이진 탐색\n";
+    int * bin = static_cast<int *>(binsearch(&key, arr, 5, sizeof(int), compare));
+    if(bin == nullptr) cout << "검색에 실패했습니다.\n";
+    else cout << key << "는 arr[" << (bin - arr) << "]에 있습니다.\n";
+
+    cout << "\nQ8 이진 탐색 2\n";
+    int * b = static_cast<int *>(bsearch(&key, arr, 5, sizeof(int), compare));
+    if(b == nullptr) cout << "검색에 실패했습니다.\n";
+    else cout << key << "는 arr[" << (b - arr) << "]에 있습니다.\n";
+
+
+    return 0;
+}
+
+void *seqsearch(const void *key, const void * base, size_t nmemb, size_t size, int(*compar)(const void*, const void *))
+{
+    const char * ptr = static_cast<const char*>(base);
+
+    for(int i = 0; i < nmemb; i++)
+    {
+        const void * element = ptr + i * size;
+        if(compar(key, element) == 0) return const_cast<void *>(element);
+    }
+
+    return nullptr;
+}
+
+void *binsearch(const void *key, const void * base, size_t nmemb, size_t size, int(*compar)(const void*, const void *))
+{
+    int pl = 0, pr = nmemb - 1;
+    const char * ptr = static_cast<const char *>(base);
+
+    while(pl <= pr)
+    {
+        int pc = (pl + pr) / 2;
+        const void * center = ptr + pc * size;
+
+        if(compar(key, center) == 0) return const_cast<void *>(center);
+        else if(compar(key, center) < 0) pr = pc - 1;
+        else pl = pc + 1;
+    }
+
+    return nullptr;
+}
+
+void *bsearch(const void *key, const void * base, size_t nmemb, size_t size, int(*compar)(const void*, const void *))
+{
+    int pl = 0, pr = nmemb - 1;
+    const char * ptr = static_cast<const char *>(base);
+    void * result = nullptr;
+
+    while(pl <= pr)
+    {
+        int pc = (pl + pr) / 2;
+        const void * center = ptr + pc * size;
+
+        if(compar(key, center) == 0) 
+        {
+            result = const_cast<void *>(center);
+            pr = pc - 1;
+        }
+        else if(compar(key, center) < 0) pr = pc - 1;
+        else pl = pc + 1;
+    }
+
+    return result;
+}
+*/
