@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// 스택 
+// Q1 스택 
 /*
 int main()
 {   
@@ -65,7 +65,7 @@ int main()
 }
 */
 
-// 이중 스택
+// Q2 이중 스택
 /*
 int main()
 {
