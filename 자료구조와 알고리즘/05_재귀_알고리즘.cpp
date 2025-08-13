@@ -108,3 +108,66 @@ int recur3(int n)
 
     return count;
 }
+
+// Q6 
+#include <stack>
+struct StackInfo
+{
+    int num;
+    int step;
+};
+
+void recur4(int n)
+{
+    stack<StackInfo> st; 
+
+    st.push({n, 0});
+
+    while(!st.empty())
+    {
+        if(st.top().num <= 0)
+        {
+            st.pop();
+            continue;
+        }
+
+        if(st.top().step == 0)
+        {
+            st.top().step = 1;
+            st.push({st.top().num - 1, 0});
+        }
+        else if(st.top().step == 1)
+        {
+            st.top().step = 2;
+            st.push({st.top().num - 2, 0});
+        }
+        else
+        {
+            cout << st.top().num << endl;
+            st.pop();
+        }
+    }
+}
+
+// Q7
+#include <string>
+
+string print(int n)
+{
+    if(n == 1) return "A 기둥";
+    else if(n == 2) return "B 기둥";
+    else return "C 기둥";
+}
+
+void hanoi(int n, int from, int to)
+{
+    int middle = 6 - from - to;
+
+    if(n > 1)
+        hanoi(n - 1, from, middle);
+
+    cout << print(from) << " -> " << print(to) << endl;
+
+    if(n > 1)
+        hanoi(n -1, middle, to);
+}
