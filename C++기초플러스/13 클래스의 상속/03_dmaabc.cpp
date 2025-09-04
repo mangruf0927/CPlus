@@ -4,6 +4,7 @@
 
 using std::cout;
 
+// baseDMA
 baseDMA::baseDMA(const char * l, int r)
 {
     label = new char[std::strlen(l) + 1];
@@ -38,8 +39,7 @@ baseDMA & baseDMA::operator=(const baseDMA & rs)
     return *this;
 }
 
-
-
+// lacksDMA
 lacksDMA::lacksDMA(const char * c)
 {
     std::strncpy(color, c, 39);
@@ -51,8 +51,7 @@ void lacksDMA::View() const
     cout << "[lacksDMA]\ncolor = " << color << std::endl; 
 }
 
-
-
+// hasDMA
 hasDMA::hasDMA(const char * s)
 {
     style = new char[std::strlen(s) + 1];
@@ -69,6 +68,7 @@ hasDMA::~hasDMA()
 {
     delete [] style;
 }
+
 hasDMA & hasDMA::operator=(const hasDMA & rs)
 {
     if(this == &rs) return *this;
