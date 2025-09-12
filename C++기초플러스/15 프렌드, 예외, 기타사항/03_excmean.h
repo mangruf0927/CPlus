@@ -32,5 +32,5 @@ class bad_gmean :  public bad_mean
 {
 public:
     bad_gmean(double a = 0, double b = 0) 
-        : bad_mean("gmean", a, b, "잘못된 매개변수 : a = -b\n") {}
+        : bad_mean("gmean", a, b, "매개변수들은 >= 0이어야 한다.\n") {}
 };
